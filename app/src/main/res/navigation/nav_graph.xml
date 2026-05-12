@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeLibraryFragment">
+
+    <fragment
+        android:id="@+id/homeLibraryFragment"
+        android:name="com.example.curio.HomeLibraryFragment"
+        android:label="Home Library"
+        tools:layout="@layout/fragment_home_library">
+        <action android:id="@+id/action_home_to_workspace" app:destination="@id/projectWorkspaceFragment" />
+        <action android:id="@+id/action_home_to_archive"   app:destination="@id/libraryArchiveFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/projectWorkspaceFragment"
+        android:name="com.example.curio.ProjectWorkspaceFragment"
+        android:label="Project Workspace"
+        tools:layout="@layout/fragment_project_workspace">
+        <action android:id="@+id/action_workspace_to_annotation" app:destination="@id/annotationViewFragment" />
+        <action android:id="@+id/action_workspace_to_writing"    app:destination="@id/writingLabFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/annotationViewFragment"
+        android:name="com.example.curio.AnnotationViewFragment"
+        android:label="Annotation View"
+        tools:layout="@layout/fragment_annotation_view" />
+
+    <fragment
+        android:id="@+id/writingLabFragment"
+        android:name="com.example.curio.WritingLabFragment"
+        android:label="Writing Lab"
+        tools:layout="@layout/fragment_writing_lab" />
+
+    <fragment
+        android:id="@+id/libraryArchiveFragment"
+        android:name="com.example.curio.LibraryArchiveFragment"
+        android:label="Library Archive"
+        tools:layout="@layout/fragment_library_archive">
+        <action android:id="@+id/action_archive_to_reader" app:destination="@id/paperReaderFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paperReaderFragment"
+        android:name="com.example.curio.PaperReaderFragment"
+        android:label="Paper"
+        tools:layout="@layout/fragment_paper_reader" />
+
+</navigation>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Curio</string>
+    <string name="new_project">New Project</string>
+    <string name="new_project_description">Create a new research project</string>
+    <string name="search_hint">Search projects…</string>
+    <string name="upload_hero">Upload Hero Image</string>
+    <string name="create_button">Create</string>
+    <string name="All">All</string>
+    <string name="Videos">Videos</string>
+    <string name="Images">Images</string>
+    <string name="Articles">Articles</string>
+    <string name="Papers">Papers</string>
+</resources>
