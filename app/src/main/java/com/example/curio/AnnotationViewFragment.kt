@@ -67,9 +67,7 @@ class AnnotationViewFragment : Fragment(R.layout.fragment_annotation_view) {
 
         // Swipe logic for swipe to delete functionality
         val swipeHandler = SwipeToDeleteCallback { position ->
-            // Get the note using the position from the adapter's internal list
-            val noteToDelete = viewModel.getNotesForSource(sourceId).value?.get(position)
-
+            val noteToDelete = notesAdapter.notesList.getOrNull(position)
             noteToDelete?.let {
                 viewModel.deleteNote(it)
                 Toast.makeText(requireContext(), "Note deleted", Toast.LENGTH_SHORT).show()
@@ -156,7 +154,7 @@ class AnnotationViewFragment : Fragment(R.layout.fragment_annotation_view) {
     inner class NotesAdapter : RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
 
         // Stores current list of notes
-        private var notesList = listOf<Note>()
+        var notesList = listOf<Note>()
 
         // Updates adapter data and refreshes RecyclerView
         fun submitList(newNotes: List<Note>) {

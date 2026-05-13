@@ -122,9 +122,7 @@ class ProjectWorkspaceFragment : Fragment(R.layout.fragment_project_workspace) {
 
         // Swipe logic for swipe to delete functionality
         val swipeHandler = SwipeToDeleteCallback { position ->
-            // Get the source from the current list using the position
-            val sourceToDelete = viewModel.getFilteredSources(projectId).value?.get(position)
-
+            val sourceToDelete = adapter.items.getOrNull(position)
             sourceToDelete?.let {
                 viewModel.deleteSource(it)
                 Toast.makeText(requireContext(), "Source deleted", Toast.LENGTH_SHORT).show()
@@ -220,7 +218,7 @@ class ProjectWorkspaceFragment : Fragment(R.layout.fragment_project_workspace) {
     inner class SourceAdapter(val onClick: (Source) -> Unit) :
         RecyclerView.Adapter<SourceAdapter.ViewHolder>() {
 
-        private var items = listOf<Source>()
+        var items = listOf<Source>()
 
         fun submitList(newList: List<Source>) {
             items = newList
