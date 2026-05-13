@@ -1,49 +1,48 @@
 # Curio: Your Personal Research Lab 
 
-**Curio** is a research ecosystem designed to help lifelong learners organize media, annotate sources, and synthesize findings into formal "Mini-Theses." It moves beyond simple bookmarking to provide a focused, distraction-free environment for intellectual exploration.
+**Curio** is a comprehensive research ecosystem designed for lifelong learners to organize digital media, annotate complex sources, and synthesize findings into formal research papers. Built for Android, it moves beyond simple bookmarking by providing a focused, distraction-free environment for deep intellectual exploration.
 
 ---
 
-## 🎨 Visual Identity & UI Shell
-For Phase 2, Curio has been fully themed with an **Academic-Chic** aesthetic:
-- **Forest Green:** Primary brand color, representing focus and scholarly growth.
-- **Cream White:** A clean, paper-like surface for writing and reading.
-- **Baby Blue:** Soft accents for interactive elements and secondary containers.
+## 🚀 The Research Lifecycle
+Curio's architecture follows the natural progression of a research project, powered by the Android Navigation Component:
+1. **Home Library:** The central dashboard for managing active research projects. Users can create new projects with custom hero images or search through existing ones.
+2. **Project Workspace:** A dedicated hub for each project that automatically categorizes collected sources into Videos, Articles, Images, and Papers.
+3. **Annotation Lab:** A split-context interface where users can view sources via an integrated WebView while simultaneously capturing timestamped notes.
+4. **Writing Lab:** A focused environment for drafting the final synthesis. Once completed, papers are "published" to move the project from active status to the permanent archive.
+5. **Library Archive:** A read-only gallery of completed research, preserving findings in a clean, academic format.
 
-The UI utilizes **Material 3 (M3)** components, including a cohesive token-based color system (`?attr/colorPrimary`, `?attr/colorSurface`, etc.) that ensures visual consistency across all five core screens.
-
----
-
-## Navigation & Flow
-The application architecture is built on the **Android Navigation Component**, allowing for seamless transitions through the research lifecycle:
-
-1.  **Home Library:** The dashboard for managing active "Rabbit Holes" (Projects).
-2.  **Project Workspace:** A filtered hub for all research sources (Videos, Articles, Images, etc).
-3.  **Annotation View:** A split-screen interface with an embedded viewer and a toggle-able NotePad/Notes Feed.
-4.  **Writing Lab:** A distraction-free environment for the final synthesis of thoughts.
-5.  **Library Archive:** A permanent gallery of completed research papers.
 
 ---
 
-## Key Features (Phase 2 Prototype)
-- **High-Fidelity Toolbar:** Contextual actions including **Search**, **Library Archive** (Library), **Project Settings** (Gear), **Save Draft** (Checkmark), and **Publish** (Upload).
-- **Dynamic Note Toggle:** Swaps between a fresh Notepad and a scrollable feed of "Old Notes" within the Annotation view.
-- **Interactive Dialogs:** Centered "New Project" and "Edit Project" dialogs with a close (X) button and Material 3 input styling.
-- **Material 3 Cards:** Project and Archive cards featuring image-hero layouts and gradient overlays.
+## ✨ Core Features
+- **Universal Media Capture:** Intercepts Android "Share" intents, allowing users to save links from any browser or media app directly into a specific Curio project.
+- **Relational Data Management:** Powered by a Room SQLite Database, the app maintains strict relationships between projects, sources, and annotations.
+- **Intuitive Gestures:** Utilizes modern Swipe-to-Delete interactions for efficient library maintenance.
+- **Intelligent UI:** A full Material 3 implementation featuring "Academic-Chic" styling with a Forest Green and Cream White color palette.
+- **Cascade Integrity:** Advanced database logic ensures that deleting a project or source automatically cleans up all associated data.
 
 ---
 
-## Future Development (Phase 3)
-- **Data Persistence:** Migration to a **Room Relational Database**.
-- **Web Scraping:** Automated metadata extraction from shared URLs.
-- **Media Integration:** YouTube API and PDF rendering within the Annotation View.
-- **Markdown Export:** Functional publishing logic for Lab entries.
+## 🛠 Technical Stack
+- **Language:** Kotlin
+- **Architecture:** MVVM (Model-View-ViewModel) with Activity-scoped ViewModels for shared state.
+- **Database:** Room Persistence Library
+- **Concurrency:** Kotlin Coroutines and Flow for real-time UI updates.
+- **UI/UX:** Material 3, View Binding, and Motion Layout.
+- **Image Loading:** Coil for asynchronous hero image and thumbnail rendering.
 
 ---
 
-## Submission Details
-- **Student Name:** Darcie Raymond
-- **Project Phase:** Phase 2 (High-Fidelity UI Shell & Navigation)
-- **Date:** May 1, 2026
+## 📝 Setup & Installation
+- **Minimum SDK:** Android 10 (API 29)
+- **Permissions:** Requires INTERNET for web viewing and READ_MEDIA_IMAGES (on Android 13+) for project customization.
+- **Deployment:** Open the project in Android Studio, sync Gradle, and deploy to a physical device or emulator.
+
+---
+
+## 👤 Credits
+- **Developer:** Darcie Raymond
+- **Version:** Final Release (May 2026)
 
 ---
